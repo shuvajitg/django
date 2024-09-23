@@ -3,4 +3,14 @@
 {% block title %}blogs{% endblock %}
 {% block content %}
     <p>wellcomw to my blogs</p>
+    <div class='grid grid-cols-3 gap-2'>
+        {% for blog in blogs  %}
+            <div class='bg-gray-800 m-3 p-2 rounded-sm'>
+                <h2 class='font-semibold text-xl'>{{ blog.title }}</h2>
+                <p class='text-xs'>{{ blog.content }}</p>
+                <img class='rounded-md mt-2' src={{blog.image.url}} alt="">
+                <button class='mt-3 bg-orange-400 w-full h-10 rounded-md hover:bg-orange-300'>check</button>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
